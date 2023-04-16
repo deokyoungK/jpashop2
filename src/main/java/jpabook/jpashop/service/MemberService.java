@@ -38,8 +38,16 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    //회원 한명 조회
     public Member findOne(Long memberId) {
         return memberRepository.findOne(memberId);
     }
 
+
+
+    //회원 수정
+    public void update(Long id, String name) {
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+    }
 }
